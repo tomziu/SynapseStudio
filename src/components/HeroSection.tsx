@@ -73,13 +73,25 @@ export default function HeroSection() {
                     Dostępny na nowe projekty
                 </div>
                 <h1>
-                    Tworzę nowoczesne strony internetowe i sklepy e-commerce, <br className="hidden md:block" />
-                    <span className="accent">które zdobywają klientów</span>
+                    {isMobile ? (
+                        <>
+                            Tworzę strony, <br />
+                            <span className="accent">które sprzedają</span>
+                        </>
+                    ) : (
+                        <>
+                            Tworzę nowoczesne strony internetowe i sklepy e-commerce, <br className="hidden md:block" />
+                            <span className="accent">które zdobywają klientów</span>
+                        </>
+                    )}
                 </h1>
 
                 <p className="hero-subtitle">
-                    Pomagam biznesom rozwijać się w internecie. Projektuję szybkie,
-                    zoptymalizowane pod SEO witryny oparte o przemyślany UX, które realnie zwiększają Twoją konwersję.
+                    {isMobile ? (
+                        "Zoptymalizowane pod SEO witryny, które zwiększają Twoją sprzedaż."
+                    ) : (
+                        "Pomagam biznesom rozwijać się w internecie. Projektuję szybkie, zoptymalizowane pod SEO witryny oparte o przemyślany UX, które realnie zwiększają Twoją konwersję."
+                    )}
                 </p>
 
                 <div className="hero-actions">
