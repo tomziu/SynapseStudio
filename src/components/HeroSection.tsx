@@ -16,13 +16,13 @@ export default function HeroSection() {
 
     return (
         <section id="hero" className="hero">
-            <div className="hero-bg">
+            <div className="hero-bg bg-black">
                 <video 
                     src="/video.mp4" 
                     autoPlay 
                     muted 
                     playsInline 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-[0.80] md:scale-100 transform origin-center"
                 />
             </div>
 
@@ -45,11 +45,17 @@ export default function HeroSection() {
             <div className="block md:hidden w-full relative z-10 pb-16">
                 
                 {/* View 1: The Hook */}
-                <div className="flex flex-col justify-center px-6 min-h-[85svh] relative pt-10">
-                    <h1 style={{ fontSize: '13vw', lineHeight: '1.05', marginBottom: '1.5rem', fontWeight: 900 }}>
-                        Strony, które <br/>
-                        <span className="accent" style={{ background: 'var(--accent)', color: '#000', padding: '0 16px', display: 'inline-block', transform: 'rotate(-3deg)', marginTop: '0.8rem' }}>sprzedają.</span>
+                <div className="flex flex-col justify-center px-6 min-h-[85svh] relative pt-10 text-center">
+                    <h1 className="text-4xl font-black mb-4 leading-tight">
+                        Nowoczesne <br/>
+                        <span className="accent" style={{ background: 'var(--accent)', color: '#000', padding: '0 12px', display: 'inline-block', transform: 'rotate(-2deg)', marginTop: '0.4rem' }}>
+                            witryny WWW
+                        </span>
                     </h1>
+                    
+                    <p className="text-white/80 text-lg leading-relaxed mt-4">
+                        Projektuję szybkie i zoptymalizowane strony, które zwiększają konwersję.
+                    </p>
 
                     {/* Bouncing Scroll Indicator */}
                     <motion.div 
