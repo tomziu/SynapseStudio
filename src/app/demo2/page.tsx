@@ -43,10 +43,8 @@ export default function Demo2Page() {
 
             {/* ── Top Bar ── */}
             <nav className="nike-nav">
-                <div className="nike-logo">
-                    <svg viewBox="0 0 69 32" fill="currentColor" width="64" height="28">
-                        <path d="M68.56 4.06L12.52 30.5l-1 .45A9.14 9.14 0 017.5 32a7.07 7.07 0 01-5.59-2.6A6.2 6.2 0 010 25.19a8.77 8.77 0 01.72-3.49 8.56 8.56 0 011.63-2.62l22.3-22.3A5.92 5.92 0 0128.8.35a3.62 3.62 0 012 3.14 5 5 0 01-.37 1.85L16 32.06l52.56-28z" />
-                    </svg>
+                <div className="nike-logo" style={{ fontFamily: 'inherit', fontWeight: 'black', fontSize: '1.4rem', fontStyle: 'italic', letterSpacing: '-1px' }}>
+                    NEXUS<span style={{ color: '#ff3366' }}>//</span>
                 </div>
                 <div className="nike-nav-links">
                     <span>Nowe wydania</span>
@@ -77,7 +75,7 @@ export default function Demo2Page() {
                 <div className="nike-hero-left">
                     <span className="nike-badge">JUST IN</span>
                     <h1 className="nike-title">
-                        NIKE AIR JORDAN
+                        NEXUS URBAN
                         <br />
                         <span>1</span>
                     </h1>
@@ -102,7 +100,7 @@ export default function Demo2Page() {
                                 <path d="M48 180c0-20 16-40 40-60s60-40 100-55c40-15 90-25 140-30s100-5 140 5c20 5 30 15 30 30s-10 30-30 40-50 20-90 25-90 10-150 15-120 10-160 20S48 200 48 180z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
                             </svg>
                         </div>
-                        <span className="shoe-label">AIR JORDAN 1</span>
+                        <span className="shoe-label">NEXUS URBAN 1</span>
                     </div>
                 </div>
             </main>

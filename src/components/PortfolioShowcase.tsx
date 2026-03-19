@@ -32,7 +32,7 @@ const PROJECTS = [
     },
     {
         id: "nike-hero",
-        title: "Nike Hero Section",
+        title: "Sneakers Hero Demo",
         category: "Demo Interaktywny · Sports",
         description: "Poczuj dynamikę i prędkość. Interaktywne doświadczenie na pierwszej linii z klientem z płynnymi przejściami — wzorcowy przykład hero sekcji produktowej, która hipnotyzuje i zachęca do zakupu.",
         color: "#ff3366",
