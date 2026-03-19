@@ -2130,4 +2130,5 @@ a[style*="z-index:99999999"] {
   opacity: 1;
   transform: rotate(0deg) translateX(10px);
 }
-
+
+@media (max-width: 768px) { .hero { display: block !important; padding-top: 3rem !important; height: auto !important; } }
