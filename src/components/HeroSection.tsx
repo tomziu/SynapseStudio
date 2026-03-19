@@ -70,10 +70,6 @@ export default function HeroSection() {
 
             {/* ── Desktop View ── */}
             <div className="hero-content hidden md:block">
-                <div className="online-status">
-                    <span className="dot"></span>
-                    Dostępny na nowe projekty
-                </div>
                 <h1>
                     Tworzę nowoczesne strony internetowe i sklepy e-commerce, <br />
                     <span className="accent">które zdobywają klientów</span>
@@ -83,19 +79,6 @@ export default function HeroSection() {
                     Pomagam biznesom rozwijać się w internecie. Projektuję szybkie,
                     zoptymalizowane pod SEO witryny oparte o przemyślany UX, które realnie zwiększają Twoją konwersję.
                 </p>
-
-                <div className="hero-actions">
-                    <button className="btn btn-primary" onClick={scrollToContact}>
-                        Darmowa wycena
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
-                    <button className="btn btn-outline" onClick={scrollToPortfolio}>
-                        Zobacz realizacje
-                    </button>
-                </div>
             </div>
 
             {/* ── Mobile Storytelling Scroll View ── */}
@@ -103,11 +86,6 @@ export default function HeroSection() {
                 
                 {/* View 1: The Hook */}
                 <div className="flex flex-col justify-center px-6 min-h-[85svh] relative pt-10">
-                    <div className="online-status mb-8 self-start bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/5">
-                        <span className="dot" style={{ width: '8px', height: '8px' }}></span>
-                        Dostępny od zaraz
-                    </div>
-                    
                     <h1 style={{ fontSize: '13vw', lineHeight: '1.05', marginBottom: '1.5rem', fontWeight: 900 }}>
                         Strony, które <br/>
                         <span className="accent" style={{ background: 'var(--accent)', color: '#000', padding: '0 16px', display: 'inline-block', transform: 'rotate(-3deg)', marginTop: '0.8rem' }}>sprzedają.</span>
@@ -132,22 +110,7 @@ export default function HeroSection() {
                         viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <p className="hero-subtitle text-white/90" style={{ fontSize: '1.25rem', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 400 }}>
-                            Zbuduję dla Twojej firmy błyskawiczną platformę opartą o nienaganny UX, która zamieni każdego przypadkowego odwiedzającego w Twój czysty zysk.
-                        </p>
 
-                        <div className="flex flex-col gap-4 w-full">
-                            <button className="btn btn-primary w-full justify-center shadow-xl shadow-[#7c5cfc]/25 border-none" onClick={scrollToContact}>
-                                Poproś o darmową wycenę
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </button>
-                            <button className="btn btn-outline w-full justify-center bg-black/40 backdrop-blur-md" onClick={scrollToPortfolio}>
-                                Zobacz moje realizacje
-                            </button>
-                        </div>
                     </motion.div>
                 </div>
 

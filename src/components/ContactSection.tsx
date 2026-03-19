@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Handshake, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Send, Handshake, MessageCircle, CheckCircle2, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import Script from "next/script";
 import "./ContactSection.css";
@@ -85,22 +85,44 @@ export default function ContactSection() {
                             Wypełnij formularz obok, albo złapmy się na 15-minutowe intro i mądrą kawę. 
                         </p>
 
-                        <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                            <a href="mailto:kacper.tomzik1@gmail.com" className="contact-coffee-btn">
-                                <MessageCircle size={18} />
-                                kacper.tomzik1@gmail.com
+                        <div className="contact-methods-grid">
+                            <a href="mailto:kacper.tomzik1@gmail.com" className="c-method-card method-email">
+                                <div className="c-method-icon">
+                                    <MessageCircle size={22} />
+                                </div>
+                                <div className="c-method-text">
+                                    <span className="c-method-label">Napisz e-mail</span>
+                                    <span className="c-method-value">kacper.tomzik1@gmail.com</span>
+                                </div>
                             </a>
+
+                            <a href="tel:+48570854348" className="c-method-card method-phone">
+                                <div className="c-method-glow" />
+                                <div className="c-method-icon">
+                                    <Phone size={22} className="phone-shake" />
+                                </div>
+                                <div className="c-method-text">
+                                    <span className="c-method-label">Telefon bezpośredni</span>
+                                    <span className="c-method-value">+48 570 854 348 (Porozmawiajmy)</span>
+                                </div>
+                            </a>
+
                             <button 
-                                className="contact-coffee-btn" 
+                                className="c-method-card method-coffee"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     if (typeof window !== 'undefined' && (window as any).Calendly) {
                                         (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/kacper-tomzik1/30min'});
                                     }
-                                }} 
-                                style={{ background: 'rgba(244, 63, 94, 0.1)', borderColor: 'rgba(244, 63, 94, 0.3)', color: '#f43f5e' }}
+                                }}
                             >
-                                <span className="coffee-icon">☕</span> Umów luźną rozmowę
+                                <div className="c-method-icon">
+                                    <span className="coffee-emoji">☕</span>
+                                </div>
+                                <div className="c-method-text">
+                                    <span className="c-method-label">Niezobowiązująco</span>
+                                    <span className="c-method-value">Umów luźną rozmowę</span>
+                                </div>
                             </button>
                         </div>
                     </div>

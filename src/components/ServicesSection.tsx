@@ -35,21 +35,7 @@ export default function ServicesSection() {
                         <h2 className="section-title !mb-4">Co mogę dla<br />Ciebie zbudować?</h2>
                     </motion.div>
                     
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="max-w-3xl w-full mx-auto"
-                    >
-                        <div className="relative group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl text-center">
-                            <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-accent-pop/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <p className="relative text-lg md:text-xl leading-relaxed mx-auto text-balance">
-                                <span className="text-muted/60 opacity-80">Nie produkuję masowych szablonów.</span>{" "}
-                                <span className="text-text-primary">Dostarczam unikalne cyfrowe narzędzia <strong className="font-semibold text-accent-light">klasy premium</strong>, które budują autorytet i <span className="bg-accent-pop/10 text-accent-pop px-2 py-0.5 rounded-md font-medium border border-accent-pop/20 shadow-[0_0_10px_rgba(165,180,252,0.15)] inline-block mt-2 sm:mt-0">generują zyski.</span></span>
-                            </p>
-                        </div>
-                    </motion.div>
+
                 </div>
 
                 <div className="services-bento-grid">
@@ -63,8 +49,12 @@ export default function ServicesSection() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="bento-graphics">
-                            <div className="g-wireframe" />
-                            <div className="g-sphere" />
+                            <div className="g-web-glow" />
+                            <div className="g-web-container">
+                                <div className="g-web-card main" />
+                                <div className="g-web-card floating1" />
+                                <div className="g-web-card floating2" />
+                            </div>
                         </div>
                         <div className="bento-content">
                             <div className="bento-icon" style={{ color: '#a78bfa' }}>
