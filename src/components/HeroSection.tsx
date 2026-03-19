@@ -1,39 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import UnicornScene from "unicornstudio-react/next";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-    const [isMobile, setIsMobile] = useState(false);
-
-    // Hide UnicornStudio branding and check mobile
-    useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-
-        const remove = () => {
-            document
-                .querySelectorAll('a[href*="unicorn.studio"], a[href*="unicornstudio"]')
-                .forEach((el) => {
-                    const htmlEl = el as HTMLElement;
-                    htmlEl.style.display = 'none';
-                    htmlEl.style.opacity = '0';
-                    htmlEl.remove();
-                });
-        };
-        remove();
-        const observer = new MutationObserver(remove);
-        observer.observe(document.body, { childList: true, subtree: true });
-        const timer = setTimeout(remove, 2000);
-        return () => {
-            window.removeEventListener('resize', checkMobile);
-            observer.disconnect();
-            clearTimeout(timer);
-        };
-    }, []);
 
     const scrollToContact = () => {
         const el = document.getElementById('kontakt');
@@ -48,22 +18,13 @@ export default function HeroSection() {
     return (
         <section id="hero" className="hero">
             <div className="hero-bg">
-                {isMobile ? (
-                    <Image 
-                        src="/mobile.webp" 
-                        alt="Background" 
-                        fill 
-                        priority 
-                        style={{ objectFit: 'cover' }}
-                    />
-                ) : (
-                    <UnicornScene
-                        projectId="rYSFpVo7tyQugiuC51jD"
-                        sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.1/dist/unicornStudio.umd.js"
-                        width="100%"
-                        height="100%"
-                    />
-                )}
+                <Image 
+                    src="/mobile.webp" 
+                    alt="Background" 
+                    fill 
+                    priority 
+                    style={{ objectFit: 'cover' }}
+                />
             </div>
 
             <div className="hero-overlay" />
