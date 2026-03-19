@@ -1,0 +1,435 @@
+/* ============================
+   DEMO2 — Nike E-Commerce Hero
+   ============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ── Root ── */
+.demo2-nike {
+    --nike-bg: #0a0a0a;
+    --nike-text: #ffffff;
+    --nike-muted: rgba(255, 255, 255, 0.5);
+    --nike-accent: #ffffff;
+    --nike-blue: #3b82f6;
+    font-family: 'Inter', sans-serif;
+    background: var(--nike-bg);
+    color: var(--nike-text);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── WebGL Background ── */
+.nike-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+.nike-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(to right, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0) 60%, rgba(10, 10, 10, 0.1) 100%),
+        radial-gradient(circle at 60% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ── Navigation ── */
+.nike-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+}
+
+.nike-logo {
+    color: var(--nike-text);
+    opacity: 0.9;
+}
+
+.nike-nav-links {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--nike-muted);
+}
+
+.nike-nav-links span {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nike-nav-links span:hover {
+    color: var(--nike-text);
+}
+
+.nike-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nike-nav-icon {
+    background: none;
+    border: none;
+    color: var(--nike-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    padding: 0.5rem;
+}
+
+.nike-nav-icon:hover {
+    color: var(--nike-text);
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    background: var(--nike-blue);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Hero Content ── */
+.nike-hero {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 3rem;
+    gap: 4rem;
+}
+
+.nike-hero-left {
+    flex: 0 0 45%;
+    max-width: 580px;
+    padding-top: 2rem;
+}
+
+.nike-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: var(--nike-blue);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+
+.nike-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.nike-title span {
+    color: var(--nike-blue);
+    display: block;
+}
+
+.nike-desc {
+    color: var(--nike-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+}
+
+/* ── Meta: Sizes & Colors ── */
+.nike-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.nike-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--nike-muted);
+}
+
+.nike-sizes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nike-sizes span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--nike-muted);
+}
+
+.nike-sizes span:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--nike-text);
+}
+
+.nike-sizes span.active {
+    border-color: var(--nike-text);
+    background: var(--nike-text);
+    color: var(--nike-bg);
+}
+
+.nike-colors {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.swatch:hover {
+    outline-color: rgba(255, 255, 255, 0.3);
+}
+
+.swatch.active {
+    outline-color: var(--nike-text);
+}
+
+/* ── Actions ── */
+.nike-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nike-btn-buy {
+    flex: 1;
+    padding: 1rem 2rem;
+    background: var(--nike-text);
+    color: var(--nike-bg);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nike-btn-buy:hover {
+    background: var(--nike-blue);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+}
+
+.nike-btn-fav {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--nike-muted);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nike-btn-fav:hover {
+    border-color: #e25555;
+    color: #e25555;
+}
+
+/* ── Right Zone: Shoe Placeholder ── */
+.nike-hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nike-shoe-placeholder {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 512 / 220;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoe-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.shoe-silhouette {
+    width: 100%;
+    max-width: 400px;
+    opacity: 0.4;
+    animation: shoeFloat 6s ease-in-out infinite;
+}
+
+@keyframes shoeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.shoe-label {
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Footer ── */
+.nike-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.05em;
+}
+
+.nike-footer-left {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nike-footer-left .divider {
+    opacity: 0.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .nike-hero {
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .nike-hero-left {
+        flex: 0 0 auto;
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    .nike-hero-right {
+        display: none;
+    }
+
+    .nike-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nike-nav-links {
+        display: none;
+    }
+
+    .nike-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .nike-footer {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nike-hero {
+        padding: 5rem 1.25rem 2rem;
+    }
+
+    .nike-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .nike-sizes span {
+        width: 36px;
+        height: 36px;
+        font-size: 0.75rem;
+    }
+
+    .nike-btn-buy {
+        font-size: 0.8rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .nike-btn-fav {
+        width: 46px;
+        height: 46px;
+    }
+}
