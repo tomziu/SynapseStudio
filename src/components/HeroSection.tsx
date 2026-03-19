@@ -72,26 +72,34 @@ export default function HeroSection() {
                     <span className="dot"></span>
                     Dostępny na nowe projekty
                 </div>
-                <h1>
-                    {isMobile ? (
-                        <>
-                            Tworzę strony, <br />
-                            <span className="accent">które sprzedają</span>
-                        </>
-                    ) : (
-                        <>
-                            Tworzę nowoczesne strony internetowe i sklepy e-commerce, <br className="hidden md:block" />
-                            <span className="accent">które zdobywają klientów</span>
-                        </>
-                    )}
+                {/* Desktop Headline */}
+                <h1 className="hidden md:block">
+                    Tworzę nowoczesne strony internetowe i sklepy e-commerce, <br />
+                    <span className="accent">które zdobywają klientów</span>
+                </h1>
+                
+                {/* Mobile Headline - Neo Brutalist Style */}
+                <h1 className="block md:hidden" style={{ fontSize: '3.5rem', lineHeight: '1.1', marginBottom: '1.5rem' }}>
+                    Strony, które <br/>
+                    <span className="accent" style={{ 
+                        background: 'var(--accent)', 
+                        color: '#000', 
+                        padding: '0 12px', 
+                        display: 'inline-block', 
+                        transform: 'rotate(-2deg)',
+                        marginTop: '0.5rem'
+                    }}>sprzedają.</span>
                 </h1>
 
-                <p className="hero-subtitle">
-                    {isMobile ? (
-                        "Zoptymalizowane pod SEO witryny, które zwiększają Twoją sprzedaż."
-                    ) : (
-                        "Pomagam biznesom rozwijać się w internecie. Projektuję szybkie, zoptymalizowane pod SEO witryny oparte o przemyślany UX, które realnie zwiększają Twoją konwersję."
-                    )}
+                {/* Desktop Subtitle */}
+                <p className="hero-subtitle hidden md:block">
+                    Pomagam biznesom rozwijać się w internecie. Projektuję szybkie,
+                    zoptymalizowane pod SEO witryny oparte o przemyślany UX, które realnie zwiększają Twoją konwersję.
+                </p>
+                
+                {/* Mobile Subtitle */}
+                <p className="hero-subtitle block md:hidden" style={{ fontSize: '1.1rem', marginBottom: '2.5rem', opacity: 0.9 }}>
+                    Bezkompromisowy UX i kod, który zamienia kliknięcia w twój czysty zysk.
                 </p>
 
                 <div className="hero-actions">
