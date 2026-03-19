@@ -302,5 +302,10 @@
 @keyframes barGrow1 { 0% { height: 10%; } 100% { height: 35%; } }
 @keyframes barGrow2 { 0% { height: 25%; } 100% { height: 50%; } }
 @keyframes barGrow3 { 0% { height: 20%; } 100% { height: 45%; } }
-@keyframes barGrow4 { 0% { height: 50%; } 100% { height: 80%; } }
 @keyframes barGrow5 { 0% { height: 70%; } 100% { height: 100%; } }
+
+@media (max-width: 768px) {
+  .google-showcase-visual * {
+    animation: none !important;
+  }
+}

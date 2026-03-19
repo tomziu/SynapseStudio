@@ -315,3 +315,9 @@
   50% { opacity: 0.8; }
   100% { transform: translateY(200%); opacity: 0; }
 }
+
+@media (max-width: 768px) {
+  .bento-graphics * {
+    animation: none !important;
+  }
+}

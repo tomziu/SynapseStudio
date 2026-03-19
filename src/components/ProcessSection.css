@@ -247,3 +247,9 @@
 @keyframes spinGear { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @keyframes blastOff { 0% { transform: translateY(20px); } 100% { transform: translateY(-20px); } }
 @keyframes flicker { 0% { opacity: 0.8; height: 30px; } 100% { opacity: 1; height: 35px; } }
+
+@media (max-width: 768px) {
+  .process-graphic-wrapper * {
+    animation: none !important;
+  }
+}

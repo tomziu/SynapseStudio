@@ -1,11 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import UnicornScene from "unicornstudio-react/next";
 
 export default function HeroSection() {
-    // Hide UnicornStudio branding
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Hide UnicornStudio branding and check mobile
     useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
         const remove = () => {
             document
                 .querySelectorAll('a[href*="unicorn.studio"], a[href*="unicornstudio"]')
@@ -21,6 +27,7 @@ export default function HeroSection() {
         observer.observe(document.body, { childList: true, subtree: true });
         const timer = setTimeout(remove, 2000);
         return () => {
+            window.removeEventListener('resize', checkMobile);
             observer.disconnect();
             clearTimeout(timer);
         };
@@ -39,12 +46,14 @@ export default function HeroSection() {
     return (
         <section id="hero" className="hero">
             <div className="hero-bg">
-                <UnicornScene
-                    projectId="rYSFpVo7tyQugiuC51jD"
-                    sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.1/dist/unicornStudio.umd.js"
-                    width="100%"
-                    height="100%"
-                />
+                {!isMobile && (
+                    <UnicornScene
+                        projectId="rYSFpVo7tyQugiuC51jD"
+                        sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.1/dist/unicornStudio.umd.js"
+                        width="100%"
+                        height="100%"
+                    />
+                )}
             </div>
 
             <div className="hero-overlay" />

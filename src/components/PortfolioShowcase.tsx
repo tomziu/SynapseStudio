@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import "./PortfolioShowcase.css";
@@ -89,7 +90,7 @@ export default function PortfolioShowcase() {
                                             <div className="vd2-curve-2" />
                                         </div>
                                     ) : project.image ? (
-                                        <img src={project.image} alt={project.title} loading="lazy" />
+                                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'cover' }} loading="lazy" />
                                     ) : (
                                         <div style={{ width: '100%', height: '100%', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                             <span style={{ opacity: 0.2, fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '4px' }}>Wczytywanie...</span>
