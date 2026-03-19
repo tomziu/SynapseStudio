@@ -16,7 +16,7 @@ const PROJECTS = [
         color: "#c084fc", // Purple/Magenta
         route: "https://kwiatindygo.eu/",
         isExternal: true,
-        image: "/kwiatindygo.png",
+        image: "/kwiatindygo.webp",
         tags: ["Next.js", "TailwindCSS", "Framer Motion", "UI/UX"]
     },
     {
@@ -27,7 +27,7 @@ const PROJECTS = [
         color: "#38bdf8", // Blue
         route: "https://k-si.pl/",
         isExternal: true,
-        image: "/k-si.png",
+        image: "/k-si.webp",
         tags: ["React", "SEO Optimization", "Performance", "B2B"]
     },
     {

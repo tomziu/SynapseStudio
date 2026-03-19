@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import UnicornScene from "unicornstudio-react/next";
 
 export default function HeroSection() {
@@ -46,7 +47,15 @@ export default function HeroSection() {
     return (
         <section id="hero" className="hero">
             <div className="hero-bg">
-                {!isMobile && (
+                {isMobile ? (
+                    <Image 
+                        src="/mobile.webp" 
+                        alt="Background" 
+                        fill 
+                        priority 
+                        style={{ objectFit: 'cover' }}
+                    />
+                ) : (
                     <UnicornScene
                         projectId="rYSFpVo7tyQugiuC51jD"
                         sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.1/dist/unicornStudio.umd.js"
