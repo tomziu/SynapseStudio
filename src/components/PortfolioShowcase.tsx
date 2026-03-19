@@ -106,11 +106,6 @@ export default function PortfolioShowcase() {
                                     </h3>
                                     <p className="portfolio-desc">{project.description}</p>
 
-                                    <div className="portfolio-tags-premium">
-                                        {project.tags?.map((tag, tIdx) => (
-                                            <span key={tIdx} className="ptag">{tag}</span>
-                                        ))}
-                                    </div>
 
                                     <div className="btn-view-case">
                                         {project.isExternal ? 'Odwiedź stronę' : 'Zobacz live demo'}
