@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -18,12 +17,12 @@ export default function HeroSection() {
     return (
         <section id="hero" className="hero">
             <div className="hero-bg">
-                <Image 
-                    src="/mobile.webp" 
-                    alt="Background" 
-                    fill 
-                    priority 
-                    style={{ objectFit: 'cover' }}
+                <video 
+                    src="/video.mp4" 
+                    autoPlay 
+                    muted 
+                    playsInline 
+                    className="w-full h-full object-cover"
                 />
             </div>
 

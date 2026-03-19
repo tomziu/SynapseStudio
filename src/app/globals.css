@@ -281,9 +281,11 @@ ol {
   /* High saturation */
 }
 
-.hero-bg>div {
+.hero-bg > div,
+.hero-bg > video {
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover;
 }
 
 .hero-overlay {
