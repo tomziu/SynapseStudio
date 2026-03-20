@@ -4,7 +4,7 @@ import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import GoogleSection from "@/components/GoogleSection";
-import AutomationSection from "@/components/AutomationSection";
+// import AutomationSection from "@/components/AutomationSection";
 
 import PortfolioShowcase from "@/components/PortfolioShowcase";
 
@@ -39,7 +39,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <GoogleSection />
-      <AutomationSection />
+{/* <AutomationSection /> */}
       <ProcessSection />
 
       <PortfolioShowcase />
