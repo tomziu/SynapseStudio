@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="pl">
       <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
